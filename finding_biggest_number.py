@@ -6,29 +6,29 @@
 import tkinter as tk
 from tkinter import messagebox
 
-def start():
-    start_button.destroy
+def start_clicked():
+    app.destroy()
     def find_largest_number():
         # Get user input
-        num1 = entry1.get()
-        num2 = entry2.get()
-        num3 = entry3.get()
+        input_1 = entry1.get()
+        input_2 = entry2.get()
+        input_3 = entry3.get()
 
         # Check if all fields are non-empty
-        if num1 and num2 and num3:
+        if input_1 and input_2 and input_3:
             try:
                 # Convert inputs to float
-                num1 = float(num1)
-                num2 = float(num2)
-                num3 = float(num3)
+                input_1 = float(input_1)
+                input_2 = float(input_2)
+                input_3 = float(input_3)
 
                 # Use if-else statements to find the largest number
-                if num1 >= num2 and num1 >= num3:
-                    result = f"The largest number is: {num1}"
-                elif num2 >= num1 and num2 >= num3:
-                    result = f"The largest number is: {num2}"
+                if input_1 >= input_2 and input_1 >= input_3:
+                    result = f"The largest number is: {input_1}"
+                elif input_2 >= input_1 and input_2 >= input_3:
+                    result = f"The largest number is: {input_2}"
                 else:
-                    result = f"The largest number is: {num3}"
+                    result = f"The largest number is: {input_3}"
 
                 # Display the result using a messagebox
                 messagebox.showinfo("Result", result)
@@ -81,13 +81,14 @@ app.title("Start Button Example")
 # Create a start button
 start_button = tk.Button(
     app,
-    command=start,
+    command=start_clicked,
     text="Start!",
     font=("Cooper Black", 14),
     bg="#F8EFE4",
     fg="#ff9636",
 )
-start_button.pack(pady=200)
+start_button.pack(pady=100)
+
 
 # Start the Tkinter event loop for the main window
 app.mainloop()
