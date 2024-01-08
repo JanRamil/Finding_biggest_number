@@ -35,7 +35,8 @@ def start_clicked():
 
                 # Display the result
                 result_label = tk.Label(window, text=result, font=("Cooper Black", 12), bg="#F8EFE4", fg="#ffcd58")
-                result_label.place(relx=0.71, rely=0.75, anchor="center")
+                result_label.place(relx=0.71, rely=0.72, anchor="center")
+                
 
             except ValueError:
                 messagebox.showerror("Error", "Please enter valid numbers.")
@@ -47,6 +48,9 @@ def start_clicked():
         entry2.delete(0, tk.END)
         entry3.delete(0, tk.END)
 
+    def done_button():
+        window.destroy()
+        
     # Create the main window
     window = tk.Tk()
     window.title("Find Largest Number")
@@ -79,6 +83,8 @@ def start_clicked():
     calculate_button = tk.Button(window, text="Find Largest Number", command=find_largest_number, pady=10, font=("Cooper Black", 10), bg="#F8EFE4", fg="#3E630F")
     calculate_button.place(relx=0.65, rely=0.65)
 
+    exit_button = tk.Button(window, text="Exit", font=("Cooper Black", 10), bg="#F8EFE4", fg="#3E630F", command=done_button)
+    exit_button.place(relx=0.71, rely=0.75, anchor="center")
 
     # Start the Tkinter event loop
     window.mainloop()
