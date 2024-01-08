@@ -5,6 +5,9 @@
 
 import tkinter as tk
 from tkinter import messagebox
+from PIL import Image, ImageTk
+import threading
+from  tkinter import PhotoImage
 
 def start_clicked():
     app.destroy()
@@ -46,25 +49,30 @@ def start_clicked():
     # Create the main window
     window = tk.Tk()
     window.title("Find Largest Number")
-
+    window.geometry ("1181x1181")
+    background_image = PhotoImage(file=r"C:\Users\user\Downloads\CLWTDS.png")
+    background_label = tk.Label(window, image=background_image)
+    background_label.place(relwidth=1, relheight=1)
+    
     # Create entry widgets for user input
     entry_frame = tk.Frame(window, pady=10)
     entry_frame.pack()
 
     label1 = tk.Label(entry_frame, text="Enter number 1:", font=("Cooper Black", 10), bg="#F8EFE4", fg="#FF005C")
-    label1.grid(row=0, column=0, padx=5)
+    label1.place(relx=0.3, rely=0.2)
     entry1 = tk.Entry(entry_frame)
-    entry1.grid(row=0, column=1)
+    entry1.place(relx=0.3, rely=0.2)
 
     label2 = tk.Label(entry_frame, text="Enter number 2:", font=("Cooper Black", 10), bg="#F8EFE4", fg="#FF005C")
-    label2.grid(row=1, column=0, padx=5)
+    label2.place(relx=0.7, rely=0.6)
     entry2 = tk.Entry(entry_frame)
-    entry2.grid(row=1, column=1)
+    entry2.place(relx=0.7, rely=0.6)
 
     label3 = tk.Label(entry_frame, text="Enter number 3:", font=("Cooper Black", 10), bg="#F8EFE4", fg="#FF005C")
-    label3.grid(row=2, column=0, padx=5)
+    label3.place(relx=0.7, rely=0.6)
     entry3 = tk.Entry(entry_frame)
-    entry3.grid(row=2, column=1)
+    entry3.place(relx=0.7, rely=0.6)
+    
 
     # Create buttons
     calculate_button = tk.Button(window, text="Find Largest Number", command=find_largest_number, pady=10, font=("Cooper Black", 10), bg="#F8EFE4", fg="#3E630F")
@@ -78,6 +86,11 @@ def start_clicked():
 app = tk.Tk()
 app.title("Start Button Example")
 
+app.geometry ("1181x1181")
+background_image = PhotoImage(file=r"C:\Users\user\Downloads\CLWTDS.png")
+background_label = tk.Label(app, image=background_image)
+background_label.place(relwidth=1, relheight=1)
+    
 # Create a start button
 start_button = tk.Button(
     app,
@@ -87,7 +100,7 @@ start_button = tk.Button(
     bg="#F8EFE4",
     fg="#ff9636",
 )
-start_button.pack(pady=100)
+start_button.place(relx=0.7, rely=0.6)
 
 
 # Start the Tkinter event loop for the main window
